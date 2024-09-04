@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QLSV</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>QLSV</h1>
+    <center>
+        <form id="student-form">
+            <input type="text" id="student-id" placeholder="MSV" required>
+            <input type="text" id="student-name" placeholder="Họ và Tên" required>
+            <select id="gender" required>
+                <option value="">Chọn Giới Tính</option>
+                <option value="Nam">Nam</option>
+                <option value="Nữ">Nữ</option>
+            </select>
+            <input type="date" id="student-ns" required>
+            <input type="text" id="student-qq" placeholder="Quê Quán" required>
+            <button type="submit" id="add-student">Thêm</button>
+            <button type="button" id="update-student" style="display:none;">Cập Nhật</button>
+        </form>
+
+        <table id="student-table">
+            <thead>
+                <tr>
+                    <th>MSV</th>
+                    <th>Họ và Tên</th>
+                    <th>Giới Tính</th>
+                    <th>Ngày Sinh</th>
+                    <th>Quê Quán</th>
+                    <th>Hành Động</th>
+                </tr>
+            </thead>
+            <tbody id="student-list">
+            </tbody>
+        </table>
+    </center>
+    <script src="script.js"></script>
+</body>
+</html>
