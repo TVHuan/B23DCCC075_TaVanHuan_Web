@@ -1,32 +1,31 @@
-// Select DOM elements
 const studentForm = document.getElementById('student-form');
 const studentList = document.getElementById('student-list');
 const studentIdInput = document.getElementById('student-id');
 const studentNameInput = document.getElementById('student-name');
 const studentGenderInput = document.getElementById('gender');
-const studentNsInput = document.getElementById('student-ns');
-const studentQqInput = document.getElementById('student-qq');
+const studentNsInput = document.getElementById('student-ns'); 
+const studentQqInput = document.getElementById('student-qq'); 
 const addStudentBtn = document.getElementById('add-student');
 const updateStudentBtn = document.getElementById('update-student');
 
-let selectedStudentId = null;
+let selectedStudentId = null; // Biến lưu trữ ID của sinh viên 
 
-// Load students from LocalStorage
+// Hàm tải sinh viên từ LocalStorage
 function loadStudents() {
     const students = JSON.parse(localStorage.getItem('students')) || [];
-    studentList.innerHTML = ''; // Clear the table before loading
-    students.forEach(student => addStudentToTable(student));
+    studentList.innerHTML = ''; 
+    students.forEach(student => addStudentToTable(student)); // Thêm sinh viên vào bảng
 }
 
-// Save students to LocalStorage
+// Hàm lưu danh sách sinh viên vào LocalStorage
 function saveStudents(students) {
     localStorage.setItem('students', JSON.stringify(students));
 }
 
-// Add student to table
+// Hàm thêm sinh viên vào bảng
 function addStudentToTable(student) {
-    const row = document.createElement('tr');
-    row.setAttribute('data-id', student.id);
+    const row = document.createElement('tr'); 
+    row.setAttribute('data-id', student.id); 
     
     row.innerHTML = `
         <td>${student.id}</td>
@@ -39,24 +38,22 @@ function addStudentToTable(student) {
             <button onclick="deleteStudent('${student.id}')">Xóa</button>
         </td>
     `;
-    studentList.appendChild(row);
+    studentList.appendChild(row); // Thêm hàng vào danh sách
 }
 
-// Add new student
+// Xử lý sự kiện khi form được gửi
 studentForm.addEventListener('submit', function(e) {
-    e.preventDefault();
+    e.preventDefault(); 
 
     const studentId = studentIdInput.value.trim();
     const studentName = studentNameInput.value.trim();
     const studentGender = studentGenderInput.value;
-    const studentNs = studentNsInput.value;
-    const studentQq = studentQqInput.value.trim();
+    const studentNs = studentNsInput.value; 
+    const studentQq = studentQqInput.value.trim(); 
 
     if (selectedStudentId) {
-        // Cập nhật sinh viên nếu có ID đã chọn
         updateStudentInTable(selectedStudentId, studentId, studentName, studentGender, studentNs, studentQq);
     } else {
-        // Thêm sinh viên mới
         const newStudent = {
             id: studentId,
             name: studentName,
@@ -65,7 +62,7 @@ studentForm.addEventListener('submit', function(e) {
             hometown: studentQq
         };
         
-        // Lưu sinh viên mới vào LocalStorage và thêm vào bảng
+        // Lưu sinh viên mới 
         saveNewStudent(newStudent);
         addStudentToTable(newStudent);
     }
@@ -73,17 +70,16 @@ studentForm.addEventListener('submit', function(e) {
     resetForm();
 });
 
-// Save new student to LocalStorage
 function saveNewStudent(student) {
     const students = JSON.parse(localStorage.getItem('students')) || [];
-    students.push(student);
-    saveStudents(students);
+    students.push(student); 
+    saveStudents(students); 
 }
 
-// Edit student
+// Hàm sửa thông tin sinh viên
 function editStudent(studentId) {
     const students = JSON.parse(localStorage.getItem('students')) || [];
-    const student = students.find(stu => stu.id === studentId);
+    const student = students.find(stu => stu.id === studentId); 
     
     studentIdInput.value = student.id;
     studentNameInput.value = student.name;
@@ -91,49 +87,49 @@ function editStudent(studentId) {
     studentNsInput.value = student.dob;
     studentQqInput.value = student.hometown;
 
-    selectedStudentId = studentId;
-    addStudentBtn.style.display = 'none';
-    updateStudentBtn.style.display = 'inline';
+    selectedStudentId = studentId; 
+    addStudentBtn.style.display = 'none'; 
+    updateStudentBtn.style.display = 'inline'; 
 }
 
-// Update student
+// Hàm cập nhật thông tin sinh viên trong bảng
 function updateStudentInTable(studentId, id, name, gender, dob, hometown) {
     const students = JSON.parse(localStorage.getItem('students')) || [];
-    const studentIndex = students.findIndex(stu => stu.id === studentId);
+    const studentIndex = students.findIndex(stu => stu.id === studentId); 
     
-    // Cập nhật thông tin sinh viên
+
     students[studentIndex] = { id, name, gender, dob, hometown };
-    saveStudents(students);
+    saveStudents(students); 
 
-    // Cập nhật lại bảng với dữ liệu mới
+
     studentList.innerHTML = '';
-    loadStudents();
+    loadStudents(); 
 
-    resetForm();
+    resetForm(); 
 }
 
-// Delete student
+// Hàm xóa sinh viên
 function deleteStudent(studentId) {
     let students = JSON.parse(localStorage.getItem('students')) || [];
-    students = students.filter(stu => stu.id !== studentId);
-    saveStudents(students);
+    students = students.filter(stu => stu.id !== studentId); 
+    saveStudents(students); 
 
     // Xóa hàng khỏi bảng
     studentList.innerHTML = '';
-    loadStudents();
+    loadStudents(); 
 }
 
-// Reset form
+
 function resetForm() {
     studentIdInput.value = '';
     studentNameInput.value = '';
-    studentGenderInput.selectedIndex = 0; // Reset to the first option
+    studentGenderInput.selectedIndex = 0; 
     studentNsInput.value = '';
     studentQqInput.value = '';
-    selectedStudentId = null;
-    addStudentBtn.style.display = 'inline';
-    updateStudentBtn.style.display = 'none';
+    selectedStudentId = null; 
+    addStudentBtn.style.display = 'inline'; 
+    updateStudentBtn.style.display = 'none'; 
 }
 
-// Initial load
+// Tải danh sách sinh viên khi trang được tải
 window.onload = loadStudents;
