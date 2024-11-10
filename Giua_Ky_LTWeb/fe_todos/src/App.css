@@ -1,0 +1,204 @@
+/* Căn giữa toàn bộ ứng dụng */
+.app-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  margin: 0;
+  background-color: #f4f7f6;
+  padding: 20px;
+}
+
+/* Nút button đẹp hơn với hiệu ứng hover */
+button {
+  background-color: #007bff;
+  color: white;
+  margin: 10px;
+  padding: 12px 24px;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+/* Nút Close trên form Add Task */
+.close-btn {
+  background-color: #dc3545;
+  color: white;
+  font-size: 16px;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.close-btn:hover {
+  background-color: #c82333;
+}
+
+
+
+/* Form Add Task */
+.modal-footer {
+  display: flex;
+  justify-content: space-between;
+}
+
+.task-form input,
+.task-form textarea {
+  width: 100%;
+  padding: 8px;
+  margin: 10px 0;
+  border-radius: 4px;
+  border: 1px solid #ddd;
+}
+
+.task-form button {
+  padding: 8px 16px;
+  border: none;
+  background-color: #4caf50;
+  color: white;
+  cursor: pointer;
+}
+
+.task-form button[type="button"] {
+  background-color: #f44336;
+}
+
+.task-form button:hover {
+  opacity: 0.8;
+}
+
+
+
+
+
+
+
+
+
+
+/* Danh sách các task */
+.task-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;  /* Khoảng cách giữa các task */
+  max-width: 700px;
+  width: 100%;
+  padding: 0 20px;
+  margin-top: 30px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Mỗi task trong danh sách */
+.task-item {
+  display: flex;
+  flex-direction: column;  /* Các phần tử trong mỗi task sẽ xếp dọc */
+  justify-content: space-between;
+  align-items: flex-start;
+  border: 1px solid #ddd;
+  padding: 20px;
+  border-radius: 8px;
+  background-color: #fff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  font-size: 16px;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+  position: relative;
+}
+
+/* Phần hover để làm rõ task khi di chuột qua */
+.task-item:hover {
+  transform: translateY(-5px);
+  background-color: #f8f9fa;
+}
+
+/* Tiêu đề task */
+.task-item h3 {
+  font-weight: bold;
+  font-size: 18px;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+/* Mô tả task */
+.task-item p {
+  margin: 5px 0;
+  color: #666;
+  font-size: 14px;
+}
+
+/* Ngày hạn (Due Date) */
+.task-item .due-date {
+  font-style: italic;
+  color: #999;
+}
+
+/* Phần button: Mark Complete/Incomplete */
+.task-item button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background-color 0.3s ease;
+  margin-right: 10px;
+  margin-top: 10px;
+  align-self: flex-start;  /* Căn nút vào bên trái */
+}
+
+/* Nút hover */
+.task-item button:hover {
+  background-color: #0056b3;
+}
+
+/* Phần nút Delete */
+.task-item .delete-btn {
+  background-color: #dc3545;
+  color: white;
+  padding: 8px 16px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background-color 0.3s ease;
+  align-self: flex-start;  /* Căn nút vào bên trái */
+  margin-top: 5px;
+}
+
+.task-item .delete-btn:hover {
+  background-color: #c82333;
+}
+
+/* Trạng thái hoàn thành */
+.task-item .task-status {
+  padding: 5px 10px;
+  border-radius: 5px;
+  background-color: #f0f0f0;
+  margin-top: 10px;
+  font-weight: bold;
+}
+
+/* Trạng thái hoàn thành */
+.task-item .completed .task-status {
+  background-color: #d4edda;
+  color: #155724;
+}
+
+
+
+
+
+
+
+
+
+
