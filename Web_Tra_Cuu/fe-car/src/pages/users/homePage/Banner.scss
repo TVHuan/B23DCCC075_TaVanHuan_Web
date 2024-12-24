@@ -1,0 +1,27 @@
+.banner {
+    background-image: url("../../../assets/users/nissan-gtr-r35-liberty-walk-cuc-ngau-cho-dan-choi-thu-thiet-24.jpg"); /* Thay bằng đường dẫn ảnh thực */
+    background-size: cover;
+    background-position: center;
+    height: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    text-align: center;
+  
+    .banner-content {
+      background: rgba(0, 0, 0, 0.5);
+      padding: 20px;
+      border-radius: 10px;
+  
+      h1 {
+        font-size: 2.5rem;
+      }
+  
+      p {
+        margin-top: 10px;
+        font-size: 1.2rem;
+      }
+    }
+  }
+  

@@ -1,0 +1,170 @@
+// src/AddBienSo.scss
+.add-bien-so {
+    text-align: center;
+    font-family: Arial, sans-serif;
+    margin: 30px;
+    z-index: 1000; /* Điều chỉnh giá trị này nếu cần */ 
+    position: relative; /* Đảm bảo form được định vị đúng */
+  }
+
+  .bien-so-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  
+  .bien-so-form input,
+  .bien-so-form textarea,
+  .bien-so-form button {
+    margin: 10px;
+    padding: 10px;
+    width: 300px;
+  }
+  
+  .bien-so-form button {
+    background-color: #0056b3;
+    color: white;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .bien-so-form button:hover {
+    background-color: #0056b3;
+  }
+  
+
+.add-bien-so {
+    text-align: center;
+    font-family: Arial, sans-serif;
+    margin: 20px;
+  }
+  
+  .bien-so-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  
+  .bien-so-form input,
+  .bien-so-form textarea,
+  .bien-so-form button {
+    margin: 10px;
+    padding: 10px;
+    width: 300px;
+  }
+  
+  .bien-so-form button {
+    background-color: #0056b3;
+    color: white;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .bien-so-form button:hover {
+    background-color: #0056b3;
+  }
+  
+  .cancel-btn {
+    background-color: #f44336;
+    margin-top: 10px;
+  }
+  
+  .cancel-btn:hover {
+    background-color: #e53935;
+  }
+  
+  .form-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  }
+
+
+
+
+
+// src/AddBienso.scss
+.add-bien-so {
+  text-align: center;
+  font-family: Arial, sans-serif;
+  margin: 20px;
+}
+
+.bien-so-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.bien-so-form input,
+.bien-so-form textarea,
+.bien-so-form button {
+  margin: 10px;
+  padding: 10px;
+  width: 300px;
+}
+
+.them-button {
+  background: linear-gradient(135deg, #6e7dff, #4caf50);  // Gradient màu đẹp
+  color: white;
+  border: none;
+  border-radius: 25px;  // Bo góc nút tròn
+  font-size: 16px;
+  cursor: pointer;
+  transition: all 0.3s ease;  // Hiệu ứng chuyển động mượt
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);  // Bóng đổ nhẹ
+  padding: 12px 30px;  // Thêm khoảng cách để nút nổi bật hơn
+}
+
+.them-button:hover {
+  transform: scale(1.05);  // Phóng to nút khi hover
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);  // Bóng đổ đậm hơn khi hover
+  background: linear-gradient(135deg, #4caf50, #6e7dff);  // Đổi màu gradient khi hover
+}
+
+.them-button:active {
+  transform: scale(0.98);  // Hiệu ứng khi bấm vào nút
+}
+
+.cancel-btn {
+  background-color: #f44336;
+  border-radius: 25px;  // Bo góc nút hủy
+  color: white;
+  padding: 10px;
+  width: 300px;
+  margin-top: 10px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.cancel-btn:hover {
+  background-color: #e53935;  // Đổi màu khi hover
+  transform: scale(1.05);
+}
+
+.cancel-btn:active {
+  transform: scale(0.98);  // Hiệu ứng khi bấm vào nút hủy
+}
+
+.form-container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+
+  
